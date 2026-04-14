@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ZenMart -Bill Details</title>
+    <title>S_Mart -Bill Details</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" href="../css/print.css" media="print">
 </head>

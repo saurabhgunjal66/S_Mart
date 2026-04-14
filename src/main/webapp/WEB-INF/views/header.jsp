@@ -6,7 +6,7 @@
         <%-- Logo and Title Link --%>
         <a href="/" class="logo-link">
             <img src="../images/zenmartlogo.png" alt="ZenMart Logo" class="header-logo"/>
-            <h1 class="header-title">Zenmart</h1>
+            <h1 class="header-title">S_Mart</h1>
         </a>
 
         <%-- Navigation Links --%>

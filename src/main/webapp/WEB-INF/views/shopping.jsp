@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shop All Products - Zenmart</title>
+    <title>Shop All Products - S_mart</title>
     <%-- 2. Removed all internal CSS (<style> block) --%>
     <%-- 3. Added link to the external CSS file. Make sure your file is at 'src/main/resources/static/css/style.css' --%>
     <link rel="stylesheet" href="../css/style.css">

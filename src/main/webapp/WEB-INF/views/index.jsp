@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Zenmart</title>
+    <title>Welcome to S_Mart</title>
     <%-- Link to your main CSS file hi --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -18,7 +18,7 @@
     <main>
         <%-- Hero Section --%>
         <section class="hero-section">
-            <h1 class="hero-title">Welcome to Zenmart!</h1>
+            <h1 class="hero-title">Welcome to S_Mart!</h1>
             <p class="hero-subtitle">Your one-stop shop for amazing products at the best prices.</p>
             <%-- Button links to the shopping page --%>
             <a href="${pageContext.request.contextPath}/get-shop" class="btn btn-hero">Shop Now</a>

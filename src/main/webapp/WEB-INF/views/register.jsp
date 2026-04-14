@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <%-- 2. Dynamic Title based on role parameter --%>
-    <title>Register as ${param.role == 'SELLER' ? 'Seller' : 'Customer'} - ZenMart</title>
+    <title>Register as ${param.role == 'SELLER' ? 'Seller' : 'Customer'} - S_Mart</title>
     <%-- 3. Corrected CSS link using contextPath --%>
     <link rel="stylesheet" href="../css/style.css">
 </head>

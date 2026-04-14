@@ -2,7 +2,7 @@
     <div class="header-content">
         <a href="/" class="logo-link">
             <img src="../images/zenmartlogo.png" alt="zenmart" class="header-logo"/>
-            <h1 class="header-title">zenmart</h1>
+            <h1 class="header-title">S_Mart</h1>
         </a>
         <nav class="header-nav">
             <a href="/">Home</a>

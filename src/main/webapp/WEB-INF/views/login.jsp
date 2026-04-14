@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login - ZenMart</title>
+    <title>Login - S_Mart</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <style>
         .error-message { 
@@ -38,7 +38,7 @@
 
     <main>
         <div class="form-container">
-            <h1>Login to ZenMart</h1>
+            <h1>Login to S_Mart</h1>
             
             <c:if test="${param.error}">
                 <div class="error-message">
