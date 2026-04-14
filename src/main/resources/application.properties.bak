@@ -1,0 +1,15 @@
+spring.application.name=amazon_405
+
+spring.application.name=amz_project
+
+spring.datasource.url=jdbc:mysql://localhost:3306/zanmart_Database?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=krp9904
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+

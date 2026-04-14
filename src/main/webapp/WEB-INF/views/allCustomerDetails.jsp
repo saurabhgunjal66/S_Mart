@@ -1,0 +1,48 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Customers</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <!-- Include Header -->
+    <jsp:include page="header.jsp" />
+
+    <main>
+        <section class="table-container">
+            <h2 style="text-align:center; color:white; margin-top:30px; text-shadow:0 2px 5px rgba(0,0,0,0.4);">All Customers</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="customer" items="${customerList}">
+                        <tr>
+                            <td>${customer.name}</td>
+                            <td>${customer.email}</td>
+                            <td>${customer.mobile}</td>
+                            <td>${customer.address}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Include Footer -->
+    <jsp:include page="footer.jsp" />
+
+</body>
+</html>

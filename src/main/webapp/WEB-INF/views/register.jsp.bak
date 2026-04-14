@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account - zenmart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <%@ include file="header.jsp" %>
+
+    <main>
+        <%-- This is the crucial container that styles the entire form box --%>
+        <div class="form-container">
+            <h1>Create Your Account</h1>
+
+            <form action="/add-customer" method="post">
+                <%-- Each label and input is wrapped in a form-group for proper spacing --%>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" id="mobile" name="mobile" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Create Account</button>
+            </form>
+
+            <div class="form-footer-link">
+                Already have an account? <a href="/login-page">Login here</a>
+            </div>
+        </div>
+    </main>
+
+    <%@ include file="footer.jsp" %>
+
+</body>
+</html>

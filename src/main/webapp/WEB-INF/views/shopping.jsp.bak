@@ -1,0 +1,80 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shop All Products - Zenmart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Basic styling for the new button row */
+        .button-row {
+            display: flex;
+            justify-content: space-between; /* Puts space between buttons */
+            gap: 10px; /* Adds space if they wrap */
+            margin-top: 15px;
+        }
+        .button-row form, .button-row a {
+            flex: 1; /* Makes buttons share space equally */
+            display: flex;
+        }
+        .button-row button, .button-row .btn {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <jsp:include page="header.jsp" />
+
+    <main>
+        <div class="shop-header" style="text-align: center; padding: 40px 20px;">
+            <%-- Message for displaying success/error alerts, like from the RedirectAttributes --%>
+            <c:if test="${not empty successMessage}">
+                <h3 style="color: green;">${successMessage}</h3>
+            </c:if>
+            
+            <h2 class="page-title">Let's Shopping...........</h2>
+        </div>
+<form method="post">
+        <div class="product-grid">
+            
+            <c:forEach var="product" items="${productList}">
+                <div class="product-card">
+                    
+                    <c:if test="${not empty product.imageUrl}">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="product-img">
+                    </c:if>
+                    
+                    <div class="product-info">
+                        <div class="product-name">Name: <c:out value="${product.name}"/></div>
+                        <div class="product-price">Rs. <c:out value="${product.price}"/></div>
+                        <div class="product-category">Category: <c:out value="${product.category}"/></div>
+                        <div class="product-quantity">Quantity: <c:out value="${product.quantity}"/></div>
+                    </div>
+
+                    <%-- This row contains the action buttons as per the screenshot --%>
+                    <div class="button-row">
+                        <%-- Form to handle adding the specific product to the cart --%>
+                        <form action="add-to-cart" method="post">
+                            <input type="hidden" name="productId" value="${product.id}">
+                            <input type="hidden" name="quantity" value="1"> <%-- Default quantity is 1 --%>
+                            <button type="submit" class="shop-btn">AddToCart</button>
+                        </form>
+                        
+                        <a href="/shop-now" class="shop-btn">Shop Now</a>
+                    </div>
+                </div>
+            </c:forEach>
+
+        </div>
+		</form>
+    </main>
+
+    <jsp:include page="footer.jsp" />
+
+</body>
+</html>

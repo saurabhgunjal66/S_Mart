@@ -1,0 +1,66 @@
+/* Styles applied ONLY when printing */
+
+/* Hide elements not needed for the printed bill */
+body > header, /* Assumes header is a direct child of body */
+body > footer, /* Assumes footer is a direct child of body */
+.header,       /* Or use class names if header/footer are included */
+.footer,
+.back-link,    /* Hide the 'Back to Shopping' link */
+.btn-print {   /* Hide any dedicated print button */
+    display: none;
+}
+
+/* Basic print styling */
+body {
+    font-family: 'Times New Roman', Times, serif; /* Common print font */
+    font-size: 12pt;
+    color: #000000;
+    background: #ffffff; /* Ensure white background */
+    margin: 1in; /* Add standard margins */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 11pt;
+}
+
+th, td {
+    border: 1px solid #000000; /* Use solid black borders for print */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #dddddd; /* Light gray background for headers */
+    font-weight: bold;
+}
+
+/* Ensure the total section is clear */
+.total-section, .total-row td {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: transparent !important; /* Remove any background */
+}
+
+/* Prevent page breaks inside table rows */
+tr {
+    page-break-inside: avoid;
+}

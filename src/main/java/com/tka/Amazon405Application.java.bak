@@ -1,0 +1,15 @@
+package com.tka;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Amazon405Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Amazon405Application.class, args);
+		System.err.println("**welcome to amazon application ***");
+	}
+
+}

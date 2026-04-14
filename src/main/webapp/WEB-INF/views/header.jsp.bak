@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="header-content">
+        <a href="/" class="logo-link">
+            <img src="../images/zenmartlogo.png" alt="zenmart" class="header-logo"/>
+            <h1 class="header-title">zenmart</h1>
+        </a>
+        <nav class="header-nav">
+            <a href="/">Home</a>
+            <a href="/get-customer">View Customer</a>
+            <a href="/get-all-customer">View All Customers</a>
+            <a href="/get-all-products">Products</a>
+			<a href="/add-product">Add Products</a>
+            <a href="/get-shop">Shop</a>
+            <a href="/logout">Logout</a>
+            <a href="/login-page" class="btn btn-secondary">Login</a>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login - zenmart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <%@ include file="header.jsp" %>
+	
+	<h3 style="color: white;text-align: center;"> ${msg} </h3>
+
+    <main>
+        <div class="form-container">
+            <h1>Login to zenmart</h1>
+            <form action="/verify-login" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Login</button>
+            </form>
+            <div class="form-footer-link">
+                New User? <a href="/get-signup-page">Sign up here</a>
+            </div>
+        </div>
+    </main>
+
+    <%@ include file="footer.jsp" %>
+
+</body>
+</html>

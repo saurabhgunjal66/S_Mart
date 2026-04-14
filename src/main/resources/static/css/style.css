@@ -1,0 +1,721 @@
+/* ==============================================
+   1. GLOBAL STYLES & CSS VARIABLES
+   ============================================== */
+:root {
+  --primary-brand-color: #4e54c8;
+  --primary-brand-hover: #8f94fb;
+  --dark-blue-bg: #183066;
+  --dark-blue-text: #1e3a8a;
+  --light-text: #e0e6fa;
+  --white-text: #ffffff;
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../images/blueBackground.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: var(--font-primary);
+  color: #333;
+}
+
+main {
+  min-height: calc(100vh - 170px); /* Pushes footer down */
+}
+
+/* ==============================================
+   2. HEADER & NAVIGATION (DESKTOP-FIRST)
+   ============================================== */
+.header {
+  background: rgba(24, 48, 102, 0.90);
+  padding: 10px 40px; 
+  border-bottom: 2px solid var(--dark-blue-text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 80px; 
+  width: auto;
+  margin-right: -10px;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  color: var(--white-text);
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 25px; 
+}
+
+.header-nav a, .header-nav a:visited {
+  color: var(--light-text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.header-nav a:not(.btn):hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white-text);
+}
+
+/* ==============================================
+   3. GENERAL BUTTON STYLES
+   ============================================== */
+.btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+}
+/* ... (other button styles like btn-primary, btn-secondary) ... */
+.btn-primary, .btn-primary:visited {
+  background-color: var(--primary-brand-hover);
+  color: var(--dark-blue-text);
+}
+.btn-primary:hover {
+  background-color: var(--white-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-secondary, .btn-secondary:visited {
+  background-color: transparent;
+  color: var(--white-text);
+  border-color: var(--white-text);
+}
+.btn-secondary:hover {
+  background-color: var(--white-text);
+  color: var(--dark-blue-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================================
+   4. HERO & FEATURES SECTIONS (HOMEPAGE)
+   ============================================== */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 20, 40, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 550px;
+  margin-top: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+/* ... (other hero/feature styles) ... */
+.btn-hero, .btn-hero:visited {
+  margin-top: 30px;
+  padding: 14px 32px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background-color: var(--primary-brand-hover);
+  color: var(--dark-blue-text);
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn-hero:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(143, 148, 251, 0.3);
+}
+.features-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.features-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+.feature-icon {
+  height: 55px;
+  margin-bottom: 20px;
+}
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.feature-card p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==============================================
+   5. LOGIN & REGISTER FORMS
+   ============================================== */
+.form-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  margin: 60px auto;
+  padding: 40px;
+  max-width: 550px;
+}
+.form-container h1, .form-container h2 {
+  color: var(--primary-brand-color);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.form-group label {
+  font-weight: 600;
+  color: var(--dark-blue-text);
+  display: block;
+  margin-bottom: 8px;
+}
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus {
+  border-color: var(--primary-brand-hover);
+  box-shadow: 0 0 0 3px rgba(143, 148, 251, 0.5);
+  outline: none;
+}
+.btn-submit {
+  background: var(--primary-brand-color);
+  border: none;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 20px;
+  color: var(--white-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-submit:hover {
+  background: var(--primary-brand-hover);
+  color: var(--dark-blue-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.form-footer-link {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--primary-brand-color);
+}
+.form-footer-link a {
+  color: var(--primary-brand-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ==============================================
+   6. CUSTOMER DETAILS TABLE
+   ============================================== */
+.table-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.table-container h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+th {
+  background-color: var(--dark-blue-text);
+  color: #ffffff;
+  font-weight: 600;
+}
+td {
+  color: #333;
+}
+tbody tr:nth-child(even) {
+  background-color: #f3f7fb;
+}
+tbody tr:hover {
+  background-color: #e1ecfa;
+}
+.product-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* ==============================================
+   7. SHOPPING PAGE & PRODUCT GRID
+   (This is the light-card style you wanted)
+   ============================================== */
+.shop-header {
+    text-align: center;
+    margin: 50px 20px 40px;
+    color: #ffffff; /* White title */
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.success-message {
+    color: #4CAF50; 
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px; 
+    padding: 0 40px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.95); /* Light background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark text */
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1; 
+}
+
+.product-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4e54c8; 
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.product-name {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1e3a8a; 
+}
+
+.product-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.product-action {
+    padding: 0 20px 20px; 
+}
+
+.btn-add-to-cart {
+    background: linear-gradient(45deg, #4e54c8, #8f94fb); 
+    color: #ffffff;
+    width: 100%;
+    border: none;
+}
+
+.btn-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(143, 148, 251, 0.4);
+}
+
+.checkout-container {
+    text-align: center; /* Centers the button */
+    margin: 40px 0 60px 0;
+}
+
+.btn-checkout {
+    background-color: #28a745; /* Green */
+    color: #ffffff;
+    font-size: 1.15rem;
+    padding: 14px 35px;
+}
+
+.btn-checkout:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ==============================================
+   8. FOOTER
+   ============================================== */
+.footer {
+  background: rgba(24, 48, 102, 0.90);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 20px;
+  text-align: center;
+  color: var(--light-text);
+  border-top: 2px solid var(--dark-blue-text);
+  margin-top: 40px;
+}
+
+/* ==============================================
+   9. RESPONSIVE DESIGN (MOBILE-ONLY OVERRIDES)
+   ============================================== */
+@media (max-width: 768px) {
+  
+  /* --- Mobile Header --- */
+  .header {
+    padding: 10px 20px;
+  }
+  .header-content {
+    flex-direction: column; /* Stack logo and nav */
+    gap: 10px;
+  }
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+  .header-nav a {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+
+  /* --- Mobile Hero --- */
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  /* --- Mobile Table --- */
+  .table-container {
+    overflow-x: auto; /* Add horizontal scroll to tables */
+  }
+  
+  /* --- Mobile Grid --- */
+  .product-grid {
+    grid-template-columns: 1fr; /* Stack cards on mobile */
+    padding: 10px;
+  }
+  }
+  /* ==============================================
+     BILL DETAILS - ACTION BUTTONS
+     ============================================== */
+
+  .bill-actions {
+      text-align: center; /* Centers the inline-block buttons */
+      margin-top: 40px;   /* Adds space above the buttons */
+      margin-bottom: 40px; /* Adds space below the buttons */
+      padding-top: 20px; /* Adds space inside if needed */
+      border-top: 1px solid #eee; /* Optional separator line */
+  }
+
+  /* Add spacing between the buttons */
+  .bill-actions .btn {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  /* Style for "Continue Shopping" (uses secondary button style) */
+  .btn-secondary { /* Assuming you have a base .btn style */
+      background-color: #6c757d; /* Grey color */
+      color: white;
+      border: none;
+  }
+  .btn-secondary:hover {
+      background-color: #5a6268;
+  }
+
+  /* Style for "Print Bill" */
+  .btn-print {
+      background-color: #17a2b8; /* Info/Teal color */
+      color: white;
+      border: none;
+  }
+  .btn-print:hover {
+      background-color: #138496;
+  }
+
+  /* Style for "Email Bill" */
+  .btn-email {
+      background-color: #ffc107; /* Warning/Yellow color */
+      color: #333; /* Dark text for yellow background */
+      border: none;
+  }
+  .btn-email:hover {
+      background-color: #e0a800;
+  }
+
+  /* Hide print/email buttons when printing the page */
+  @media print {
+      .btn-print, .btn-email {
+          display: none;
+      }
+      .bill-actions {
+          border-top: none; /* Remove separator line when printing */
+      }
+  }
+  
+  /* ==============================================
+     HEADER - LOGOUT BUTTON STYLE
+     ============================================== */
+
+  /* Styles the logout button to look like a navigation link */
+  .btn-link-style {
+      background: none !important; /* Remove background */
+      border: none; /* Remove border */
+      padding: 8px 12px !important; /* Match link padding */
+      margin: 0; /* Remove default button margins */
+      color: var(--light-text); /* Match link color */
+      font-family: inherit; /* Use same font as other elements */
+      font-size: inherit; /* Match link font size */
+      font-weight: 600; /* Match link font weight */
+      cursor: pointer; /* Show pointer on hover */
+      text-decoration: none; /* Remove underline */
+      border-radius: 6px; /* Match link border radius */
+      transition: all 0.2s ease; /* Match link transition */
+      display: inline; /* Make it flow like text */
+      vertical-align: baseline; /* Align with adjacent links */
+  }
+
+  /* Style on hover to match links */
+  .btn-link-style:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: var(--white-text) !important;
+  }
+  
+  /* ==============================================
+     HOMEPAGE - ROLE SELECTION BOXES
+     ============================================== */
+
+  .role-selection-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch; /* Make boxes same height if content differs */
+      min-height: 60vh; /* Give it some vertical space */
+      padding: 60px 20px; /* Add padding around the boxes */
+      gap: 40px; /* Space between the two boxes */
+      flex-wrap: wrap; /* Allow boxes to stack on smaller screens */
+  }
+
+  .role-box {
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* For Safari */
+      border-radius: 15px;
+      padding: 30px 40px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+      width: 100%; /* Full width on small screens */
+      max-width: 350px; /* Max width on larger screens */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column; /* Stack content vertically */
+      justify-content: space-between; /* Push buttons towards bottom */
+  }
+
+  .role-box h2 {
+      color: var(--dark-blue-text); /* Use your theme color */
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      font-weight: 700;
+  }
+
+  .role-box p {
+      color: #444; /* Darker grey for better readability */
+      margin-bottom: 30px;
+      line-height: 1.6;
+      flex-grow: 1; /* Allow paragraph to take up space */
+  }
+
+  .role-box .btn {
+      margin: 8px 5px; /* Space out buttons */
+      min-width: 130px; /* Ensure buttons have consistent width */
+      padding: 12px 20px; /* Slightly larger buttons */
+      font-size: 0.95rem;
+  }
+
+  /* Specific Button Styles */
+  .btn-user-login {
+       background-color: var(--primary-brand-color); /* Blue */
+       color: white;
+       border: none;
+  }
+  .btn-user-login:hover {
+       background-color: var(--primary-brand-hover);
+  }
+
+  .btn-user-register {
+       background-color: #6c757d; /* Grey */
+       color: white;
+       border: none;
+  }
+   .btn-user-register:hover {
+       background-color: #5a6268;
+  }
+
+  .btn-seller-login { /* Changed from admin */
+       background-color: #17a2b8; /* Teal color for sellers */
+       color: white;
+       border: none;
+  }
+   .btn-seller-login:hover {
+       background-color: #138496;
+  }
+   .btn-seller-register { /* Added */
+       background-color: #ffc107; /* Yellow color */
+       color: #333; /* Dark text for yellow */
+       border: none;
+   }
+   .btn-seller-register:hover {
+       background-color: #e0a800;
+   }
+
+  /* Responsive adjustments if needed */
+  @media (max-width: 768px) {
+      .role-selection-container {
+          padding: 40px 15px;
+          gap: 25px;
+      }
+      .role-box {
+          max-width: 90%; /* Allow boxes to take more width */
+          padding: 25px 30px;
+      }
+      .role-box h2 {
+          font-size: 1.5rem;
+      }
+  }
+
+
+
+

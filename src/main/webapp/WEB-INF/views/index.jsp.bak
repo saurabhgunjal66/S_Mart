@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to zenmart</title>
+    <%-- Make sure this path is correct --%>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <%@ include file="header.jsp" %>
+	
+	<h3 style="color: white;text-align: center;"> ${msg} </h3>
+
+
+    <main>
+        <%-- THIS IS THE CORRECTED HERO SECTION --%>
+        <section class="hero-section">
+            <h1 class="hero-title">Welcome to zenmart!</h1>
+            <p class="hero-subtitle">Your one-stop shop for amazing products at the best prices.</p>
+            
+            <%-- It now has the "Shop Now" button instead of Login/Sign Up --%>
+            <a href="/products" class="btn btn-hero">Shop Now</a>
+        </section>
+
+        <%-- THIS IS THE CORRECTED FEATURES SECTION --%>
+        <section class="features-section">
+            <h2 class="section-title">Why Shop With Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <%-- You will need to add an icon image here --%>
+                    <img src="../images/fastdelivery.png" alt="Fast Delivery" class="feature-icon"/>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p>Get your orders delivered quickly to your doorstep.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="../images/bestprice.jpg" alt="Best Prices" class="feature-icon"/>
+                    <h3 class="feature-title">Best Prices</h3>
+                    <p>Competitive pricing on all your favorite products.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="../images/s247.jpg" alt="24/7 Support" class="feature-icon"/>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p>Our customer service team is here to assist anytime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%@ include file="footer.jsp" %>
+
+</body>
+</html>

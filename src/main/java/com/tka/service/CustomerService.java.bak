@@ -1,0 +1,45 @@
+package com.tka.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tka.dao.CustomerDao;
+import com.tka.model.Customer;
+
+@Service
+public class CustomerService {
+
+	@Autowired
+	CustomerDao customerDao;
+
+	public boolean addCustomer(Customer customer) {
+
+		Customer saveCustomer = customerDao.save(customer);
+		if (saveCustomer != null) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public List<Customer> getallCustomer() {
+
+		return customerDao.findAll();
+
+	}
+
+	public boolean verifyLogin(String username, String password) {
+		List<Customer> customerList = customerDao.findAll();
+		for (Customer customer : customerList) {
+			if (customer.getUsername().equals(username)) {
+				if (customer.getPassword().equals(password)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+}
