@@ -22,10 +22,6 @@ public class CustomerController {
 	CustomerService customerService;
 	// String msg; // 2. REMOVED: Unsafe class-level variable
 
-	@GetMapping("/")
-	public String showHomePage() {
-	 return "index";
-	}
 	
 	@GetMapping("/login") 
 	public String showLoginPage() { return "login";}
